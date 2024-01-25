@@ -8,7 +8,7 @@ import pickle
 def apply_ml(df, response_column):
     try:
         X_new = df[['P1', 'P2', 'P3', 'P4', 'P5', 'P6', 'P7', 'P8', 'P9', 'P10', 'P11']]
-        with open(f'models/{response_column}_model.pkl', 'rb') as f:
+        with open(f'{response_column}_model.pkl', 'rb') as f:
             loaded_model = pickle.load(f)
         predictions = loaded_model.predict(X_new)
         df_out = X_new.copy()
